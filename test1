@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "book_management.h"
+#include "option.h"
+int optionChoice();
+int main() {
+    int libraryOpen = 1;
+    int option;
+    while( libraryOpen ){
+        printf("\n Please choose an option:\n 1) Register an account\n 2) Login\n 3) Search for books\n 4) Display all books\n 5) Quit\n   Option: ");
+        option = optionChoice();
+
+        if( option == 1 ) {
+            printf("\n1111\n");
+        }
+        else if( option == 2 ) {
+            printf("\n2222\n");
+        }
+        else if( option == 3 ) {
+            printf("\n3333\n");
+        }
+        else if( option == 4 ) {
+            printf("\n4444\n");
+        }
+        else if( option == 5 ) {
+            libraryOpen = 0;
+            printf("\nClosing\n");
+            exit(0);
+        }
+        else
+            printf("\nSorry, the option you entered was invalid, please try again.\n");
+    }
+
+    return 0;
+}
+
+int optionChoice(){
+    int option = -1;
+    char line[80];
+    fgets(line,80,stdin);
+    option = (int)atoi(line);
+    return option;
+}
